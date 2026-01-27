@@ -4,7 +4,15 @@ import { Spinner } from "@/components/ui/spinner";
 
 function DashboardPage() {
   const { user, logout } = useAuthStore();
-  const { data, error, isLoading } = useHello();
+  const {
+    data,
+    error,
+    isLoading,
+  }: {
+    data?: { message?: string };
+    error?: Error;
+    isLoading: boolean;
+  } = useHello();
 
   return (
     <div className="flex flex-col min-h-screen p-4">
@@ -33,8 +41,12 @@ function DashboardPage() {
           <div className="bg-card p-4 rounded mb-4">
             <h3 className="font-semibold mb-2">Message from API:</h3>
             {isLoading && <Spinner />}
-            {error && <p className="text-red-600">Error: {error.message}</p>}
-            {data && <p className="text-blue-300">{data.message}</p>}
+            {typeof error === "object" && error && "message" in error && (
+              <p className="text-red-600">
+                Error: {String((error as { message?: string }).message)}
+              </p>
+            )}
+            {data?.message && <p className="text-blue-300">{data.message}</p>}
           </div>
 
           <div className="p-4 rounded">

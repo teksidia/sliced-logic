@@ -1,10 +1,17 @@
 export async function fetchApi<T>(endpoint: string, options?: RequestInit): Promise<T> {
+    const { headers, ...restOptions } = options ?? {};
     const response = await fetch(`/api${endpoint}`, {
-        ...options,
         credentials: 'include', // Important: sends cookies for authentication
+        ...restOptions,
         headers: {
             'Content-Type': 'application/json',
-            ...options?.headers,
+            ...(
+                headers instanceof Headers
+                    ? Object.fromEntries(headers.entries())
+                    : (headers && typeof headers === 'object' && !Array.isArray(headers))
+                        ? headers
+                        : {}
+            ),
         },
     });
 
@@ -14,5 +21,5 @@ export async function fetchApi<T>(endpoint: string, options?: RequestInit): Prom
         }
     }
 
-    return response.json();
+    return (await response.json()) as T;
 }

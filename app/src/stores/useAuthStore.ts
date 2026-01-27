@@ -4,7 +4,7 @@ export interface ClientPrincipal {
     userId: string;
     userDetails: string;
     userRoles: string[];
-    claims: Array<{ typ: string; val: string }>;
+    claims: { typ: string; val: string }[];
     identityProvider: string;
 }
 
@@ -45,7 +45,6 @@ export const useAuthStore = create<AuthState>((set, get) => ({
         set({ loading: true });
 
         try {
-
             const response = await fetch('/.auth/me', {
                 method: 'GET',
                 credentials: 'include', // Send HttpOnly cookie
@@ -58,13 +57,9 @@ export const useAuthStore = create<AuthState>((set, get) => ({
                 throw new Error('Failed to fetch user info');
             }
 
-            const user: Me = await response.json();
+            const user = (await response.json()) as Me | null;
 
-            if (!user) {
-                throw new Error('Failed to fetch user info');
-            }
-
-            if (!user.clientPrincipal) {
+            if (!user?.clientPrincipal) {
                 // Not authenticated - redirect to .NET challenge endpoint
                 const frontendUrl = window.location.href;
                 window.location.replace(`/.auth/login/aad?post_login_redirect_uri=${encodeURIComponent(frontendUrl)}`);

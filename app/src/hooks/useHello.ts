@@ -5,8 +5,10 @@ interface HelloResponse {
     message: string;
 }
 
-export function useHello() {
-    return useSWR('/hello', fetchApi<HelloResponse>, {
+import type { SWRResponse } from 'swr';
+
+export function useHello(): SWRResponse<HelloResponse, Error> {
+    return useSWR<HelloResponse, Error>('/hello', fetchApi<HelloResponse>, {
         revalidateOnFocus: false,
         revalidateOnReconnect: true,
     });

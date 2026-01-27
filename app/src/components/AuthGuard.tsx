@@ -11,7 +11,7 @@ export const AuthGuard: React.FC<AuthGuardProps> = ({ children }) => {
   useEffect(() => {
     // Only check auth if we haven't checked yet
     if (!hasChecked) {
-      checkAuth();
+      void checkAuth();
     }
   }, [hasChecked, checkAuth]);
 
