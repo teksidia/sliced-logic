@@ -2,9 +2,9 @@
 
 This is a monorepo, with the following structure:
 
-- api - .NET API backend services
-- app - React frontend application
 - landing - Astro landing page
+- app - React frontend application
+- api - .NET API backend services
 - shared-ui - Shared layout for app and landing
 - launcher - A .NET Aspire project that is used to run the project locally
 
