@@ -1,0 +1,94 @@
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+bin/
+obj/
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+# Dotnet
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.svclog
+*.psess
+*.vsp
+*.vspx
+*.pidb
+*.sdf
+*.cachefile
+*.dbmdl
+*.bak
+
+# Rider / ReSharper
+.idea/
+*.sln.iml
+_ReSharper*/
+*.DotSettings.user
+
+# VS Code
+.vscode/
+.history/
+
+# Visual Studio
+.vs/
+TestResults/
+[Ll]og/
+
+# NuGet
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+.nuget/
+project.lock.json
+project.fragment.lock.json
+
+# ASP.NET
+App_Data/
+
+# Node / front-end
+node_modules/
+.npm/
+.pnpm-store/
+yarn.lock
+pnpm-lock.yaml
+package-lock.json
+
+# Front-end builds
+build/
+dist/
+.temp/
+.cache/
+.next/
+.vite/
+
+# Coverage
+coverage/
+*.coverage
+*.coveragexml
+
+# Environment / config
+.env
+.env.*.local
+*.local.json
+
+# Misc
+*.swp
+*.swo
+*.tmp
+*.tmp.*

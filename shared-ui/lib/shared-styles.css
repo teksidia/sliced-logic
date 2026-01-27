@@ -1,0 +1,27 @@
+/* Shared UI Stylesheet
+   This file contains theme variables, color schemes, and base styles
+   for use across shared React components.
+*/
+
+@import "./shadcn.css";
+
+/* Where shared components live (so Tailwind can scan which styles are used) */
+@source "../components/**/*.{ts,tsx}";
+
+/* --- VIEW TRANSITIONS --- */
+/* Enables the smooth cross-fade between sites */
+@view-transition {
+  navigation: auto;
+}
+/* This tells the browser: "The header on Page A is the same as the header on Page B" */
+/* This prevents the header from jumping or flickering during the move */
+header {
+  view-transition-name: main-header;
+}
+/* Customize the transition speed */
+/* The default is a 0.25s cross-fade. Make it smoother */
+::view-transition-group(main-header) {
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+}
+/* // --- VIEW TRANSITIONS --- */

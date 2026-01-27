@@ -1,0 +1,6 @@
+@react2_backend_HostAddress = https://localhost:7055
+
+GET {{react2_backend_HostAddress}}/hello/
+Accept: application/json
+
+###

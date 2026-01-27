@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="../api/web-api.csproj" />
+  <Project Path="launcher.AppHost/launcher.AppHost.csproj" />
+  <Project Path="launcher.ServiceDefaults/launcher.ServiceDefaults.csproj" />
+</Solution>

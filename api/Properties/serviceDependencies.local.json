@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "identityapp1": {
+      "connectionInfo": "App registration: React 2, Tenant: Teksidia Ltd (teksidia.com - Microsoft Entra ID)",
+      "type": "identityapp.default"
+    }
+  }
+}

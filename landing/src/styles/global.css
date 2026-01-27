@@ -1,0 +1,5 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Pulls in the theme, the variables, AND the scanning instructions */
+@import "@my-project/shared-ui/lib/shared-styles.css";
