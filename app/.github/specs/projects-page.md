@@ -41,6 +41,10 @@ The projects data will come from an API (this will be deployed to Azure SWA so a
 
 The API is active and can be used directly - no mocks are needed.
 
+## UI Components
+
+We are using shadcn so you should plan to add/install any common UI components e.g. Card, Button, Combobox etc and use those
+
 ### Sample data for /api/projects
 
 ```json
