@@ -25,6 +25,8 @@
 - API calls and utilities are in `src/lib/`.
 - Use functional components and hooks throughout.
 - Prefer CSS modules or global styles in `index.css`.
+- Hooks should be used to organise API calls (e.g., `useProjects` for fetching project data)
+- Hooks that call the API should use 'api-client.ts' in 'lib' to make the actual requests.
 
 ## Best Practices
 

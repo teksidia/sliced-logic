@@ -8,7 +8,7 @@ Analyse the instructions below and build a plan to construct the page and/or com
 
 This is a web page where the user can browse coding challenges.
 
-They see 3 dropdowns to filter results:
+They see 3 dropdowns to filter results (single select filter)
 
 - Category - e.g. Monitoring, UI/UX, APIs, Security 
 - Industry - e.g. Financial, Insurance, Health 
