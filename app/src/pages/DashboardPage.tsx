@@ -1,18 +1,10 @@
-import { useAuthStore } from "../stores/useAuthStore";
-import { useHello } from "../hooks/useHello";
+import { useAuthStore } from "@/stores/useAuthStore";
+import { useGetHelloQuery } from "@/hooks/useHello";
 import { Spinner } from "@/components/ui/spinner";
 
 function DashboardPage() {
   const { user, logout } = useAuthStore();
-  const {
-    data,
-    error,
-    isLoading,
-  }: {
-    data?: { message?: string };
-    error?: Error;
-    isLoading: boolean;
-  } = useHello();
+  const { data, error, isLoading } = useGetHelloQuery();
 
   return (
     <div className="flex flex-col min-h-screen p-4">

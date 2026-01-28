@@ -1,8 +1,8 @@
 # Home page
 
-This a specification for the home page of the app, which displays Projects.
+Analyse the instructions below and build a incremental plan to construct the page and/or components using the standards outlined in github-instructions.md.
 
-Analyse the instructions below and build a plan to construct the page and/or components using the standards outlined in github-instructions.md.
+This a specification for the home page of the app, which displays Projects.
 
 ## Instructions
 
