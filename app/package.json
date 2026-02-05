@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "mock": "cd ../mock-api && npx json-server --watch db.json --routes routes.json --port 3000",
+    "swa": "cross-env VITE_API_BASE_URL=http://localhost:3000/api concurrently -n \"app,mock,swa\" -c \"blue,green,magenta\" \"npm run dev\" \"npm run mock\" \"swa start http://localhost:5173 --api-location http://localhost:3000\"",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -12,24 +14,28 @@
   "dependencies": {
     "@my-project/shared-ui": "file:../shared-ui",
     "@radix-ui/react-slot": "^1.2.4",
+    "@tanstack/react-query": "^5.90.20",
+    "axios": "^1.13.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.562.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.12.0",
-    "swr": "^2.3.8",
     "tailwind-merge": "^3.4.0",
     "zustand": "^5.0.10"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "cross-env": "^7.0.3",
     "@tailwindcss/vite": "^4.1.18",
+    "@tanstack/eslint-plugin-query": "^5.91.4",
     "@types/node": "^24.10.4",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react": "^5.1.1",
+    "concurrently": "^9.2.1",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",

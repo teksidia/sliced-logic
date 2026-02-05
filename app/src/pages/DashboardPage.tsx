@@ -1,10 +1,16 @@
 import { useAuthStore } from "@/stores/useAuthStore";
-import { useGetHelloQuery } from "@/hooks/useHello";
-import { Spinner } from "@/components/ui/spinner";
+import { useQuery } from "@tanstack/react-query";
+import { userQueries, useCreateUserMutation } from "../services/userService";
+import { type Pokemon } from "../types";
 
 function DashboardPage() {
   const { user, logout } = useAuthStore();
-  const { data, error, isLoading } = useGetHelloQuery();
+
+  // Use the query (similar to useGetUsersQuery)
+  const { data: users } = useQuery(userQueries.list());
+
+  // Use the mutation (similar to useCreateUserMutation)
+  const { mutate: createUser } = useCreateUserMutation();
 
   return (
     <div className="flex flex-col min-h-screen p-4">
@@ -30,20 +36,18 @@ function DashboardPage() {
             This page is only accessible to authenticated users.
           </p>
 
-          <div className="bg-card p-4 rounded mb-4">
-            <h3 className="font-semibold mb-2">Message from API:</h3>
-            {isLoading && <Spinner />}
-            {typeof error === "object" && error && "message" in error && (
-              <p className="text-red-600">
-                Error: {String((error as { message?: string }).message)}
-              </p>
-            )}
-            {data?.message && <p className="text-blue-300">{data.message}</p>}
-          </div>
-
           <div className="p-4 rounded">
             <h3 className="font-semibold mb-2">User Information:</h3>
             <pre className="text-sm">{JSON.stringify(user, null, 2)}</pre>
+          </div>
+
+          <div>
+            {users?.map((user: Pokemon) => (
+              <div key={user.name}>{user.name}</div>
+            ))}
+            <button onClick={() => createUser({ name: "New Pokemon" })}>
+              Add
+            </button>
           </div>
         </div>
       </div>

@@ -1,0 +1,80 @@
+{
+  "$schema": "./node_modules/json-server/schema.json",
+  "pokemon": [
+    {
+      "name": "bulbasaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/1/",
+      "id": "d254"
+    },
+    {
+      "name": "ivysaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/2/",
+      "id": "2c3e"
+    },
+    {
+      "name": "venusaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/3/",
+      "id": "1806"
+    },
+    {
+      "name": "charmander",
+      "url": "https://pokeapi.co/api/v2/pokemon/4/",
+      "id": "4f31"
+    },
+    {
+      "name": "charmeleon",
+      "url": "https://pokeapi.co/api/v2/pokemon/5/",
+      "id": "12ea"
+    },
+    {
+      "name": "charizard",
+      "url": "https://pokeapi.co/api/v2/pokemon/6/",
+      "id": "e875"
+    },
+    {
+      "name": "squirtle",
+      "url": "https://pokeapi.co/api/v2/pokemon/7/",
+      "id": "8fdd"
+    },
+    {
+      "name": "wartortle",
+      "url": "https://pokeapi.co/api/v2/pokemon/8/",
+      "id": "6ae7"
+    },
+    {
+      "name": "New Pokemon",
+      "id": "R-gE04j"
+    },
+    {
+      "name": "New Pokemon",
+      "id": "med8kV3"
+    },
+    {
+      "name": "New Pokemon",
+      "id": "CrSOmZe"
+    },
+    {
+      "name": "New Pokemon",
+      "id": "MqNtY2_"
+    },
+    {
+      "name": "New Pokemon",
+      "id": "Ch9gHSp"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

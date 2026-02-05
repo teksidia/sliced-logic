@@ -1,19 +1,15 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { SWRConfig } from "swr";
 import "./index.css";
 import App from "./App.tsx";
-import fetcher from "@/lib/fetcher.ts";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <SWRConfig
-      value={{
-        //refreshInterval: 3000,
-        fetcher,
-      }}
-    >
+    <QueryClientProvider client={queryClient}>
       <App />
-    </SWRConfig>
+    </QueryClientProvider>
   </StrictMode>,
 );
